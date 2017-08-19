@@ -28,14 +28,75 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function generateHint() {
+function generateHint (guess, hint) {
   // your code here
-}
+  // current guess from user
+  let currentGuess = arguments[0];
+  let positionsChecked = []; // to avoid adding duplicates to the results
+
+  let numHits = 0; // correct position
+  let numContained = 0; // just contained - wrong position
+
+  // init
+  for (let i=0; i<4; i++){
+  positionsChecked[i] = false; // set all positions in the secret string to unchecked
+  }
+  // 0 1 2 3
+  // 'abcd' - 1-1
+  // 'aabb'
+  // calculate hits
+  for (let i=0; i<4; i++){ // for every character in the current guess and solution
+  if (currentGuess.charAt(i) === solution.charAt(i)) { //
+  positionsChecked[i] = true; // set position to checked to not check again
+  numHits++; // increase greens - contained at correct position
+  }
+  }
+
+  // calculate only contained
+  // 0 1 2 3
+  // 'abcd' - 1-1
+  // 'aabb'
+  for(let i=0; i<4; i++){ // for every character in the current guess a b c d
+  for (let j=0; j<4; j++){ // for every character in the solution
+  if (currentGuess.charAt(i) === solution.charAt(j) // if there is a match
+  && positionsChecked[j] === false // and we haven't checked the solution's character yet
+  ){
+  positionsChecked[j] = true; // set position to checked to not check again
+  numContained++; // increae yellows - contained but wrong position
+  }
+  }
+  }
+  return numHits+'-'+numContained;
+  }
+
+
+
 
 function mastermind(guess) {
   solution = 'abcd'; // Comment this out to generate a random solution
   // your code here
-}
+  //generateSolution();
+  solution.split('');
+  guess.split('');
+  if (solution === guess) {
+    return 'You guessed it!';
+  } else {
+    board.push(guess.split(''));
+    generateHint;
+  }
+
+
+  }
+
+
+mastermind('abcd');
+console.log(board);
+// console.log((board[0])[0]);
+console.log(solution);
+// console.log(solution);
+// console.log(typeof solution);
+
+
 
 
 function getPrompt() {
@@ -46,7 +107,8 @@ function getPrompt() {
   });
 }
 
-// Tests
+
+//Tests
 
 if (typeof describe === 'function') {
   solution = 'abcd';
