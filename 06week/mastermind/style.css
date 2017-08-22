@@ -1,0 +1,73 @@
+#headline {
+  text-align: center;
+  font-family: helvetica;
+}
+
+.flex-container-1 {
+  background: #EAD7AC;
+  margin: 25px;
+  border: 1px solid black;
+}
+
+.flex-container-2 {
+  border: 1px solid black;
+  background: #7A917B;
+}
+
+.flex-container-3 {
+  border: 1px solid black;
+  background: #2E3D35;
+  float: right;
+}
+
+div[data-cell] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  float: left;
+  margin: 10px;
+  text-align: center;
+  border: 1px solid #808080;
+  font-size: 30px;
+  font-family: helvetica;
+  border-radius: 100px;
+}
+
+#winMessage {
+  background-color: #2E3D35;
+}
+
+.gameBoard, .yourGuess, .solution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*border: 1px solid black;*/
+}
+
+.yourGuess {
+  margin-top: 25px;
+}
+
+input[type=text] {
+  font-size: 2em;
+  text-align: center;
+  width: 500px;
+  height: 69px;
+}
+
+.button {
+  background-color: #C46C50;
+  font-size: 2em;
+  text-align: center;
+  width: 100px;
+  height: 75px;
+  border: 1px solid black;
+  outline: none !important;
+}
+
+.row, .solutionRow {
+  clear: both;
+}

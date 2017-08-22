@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mastermind</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <div id="headline">
+    <h1>Mastermind</h1>
+  </div>
+
+  <div class="solution">
+    <div class="flex-container-1">
+      <div class="solutionRow">
+        <div data-cell="0">*</div>
+        <div data-cell="1">*</div>
+        <div data-cell="2">*</div>
+        <div data-cell="3">*</div>
+        <div id='winMessage' data-cell="4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gameBoard">
+    <div class='flex-container-2'>
+
+    </div>
+    <div class="hint">
+      <div class='flex-container-3'>
+        <!-- <div data-cell="0"></div> -->
+      </div>
+    </div>
+
+  </div>
+
+  <div class='yourGuess'>
+    <div class="flex-container">
+      <input type="text" id="yourGuess" placeholder="choose 4 letters a-e">
+      <!-- pressing play will return the input as a string and place it on the board -->
+      <button class='button' onclick="playGuess()">Play</button>
+    </div>
+  </div>
+
+
+
   <script type="text/javascript" src="./script.js"></script>
 </body>
+
 </html>
